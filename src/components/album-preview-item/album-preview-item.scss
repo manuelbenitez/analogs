@@ -3,10 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-grow: 1;
-
   width: 25rem;
-  height: auto;
+  height: 25rem;
 
   padding: 1rem;
   margin: 3rem;
@@ -16,7 +14,7 @@
     position: relative;
 
     width: 100%;
-    height: 18rem;
+    height: 85%;
 
     .cover-image {
       position: absolute;

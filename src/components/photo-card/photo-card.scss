@@ -2,13 +2,23 @@
   position: relative;
   width: 30rem;
   height: 15rem;
+  box-shadow: 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.486);
 
-  box-shadow: 0.5px 0.5px 2px rgba(173, 173, 173, 0.589);
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 50vw;
+    box-shadow: none;
+
+  }
 
   .photo {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    @media (max-width: 1024px) {
+      object-fit: contain;
+    }
   }
 }

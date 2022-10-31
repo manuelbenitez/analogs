@@ -1,36 +1,67 @@
 import React, { useState } from "react";
+import AlbumPreviewItem from "../album-preview-item/album-preview-item";
+import japanCover from "../../assets/Japan/Segundo rollo/FH000001.JPG";
+import newZealandCover from "../../assets/New Zealand/Segundo Rollo/007_7A.jpg";
+import austriaCover from "../../assets/Austria/Innsbruck/Black and White/033_N32.jpg";
+import argentinaCover from "../../assets/Argentina/Casamiento/Segundo Rollo/imm005_8.jpg";
+import franceCover from "../../assets/France/imm000_1.jpg";
+import spainCover from "../../assets/Spain/IMG_2501.JPG";
 import "./menu.scss";
+import { albumTitlesConstants } from "../../components/album-preview-item/title.constants";
+
 const Menu = () => {
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
   return (
     <>
       <div className="menu-title" onClick={() => setMenuOpen(!isMenuOpen)}>
-        {"MENU"}
+        {"ALBUMS"}
       </div>
+      <a className="menu-title-the-2nd" href="/">
+        {"HOME"}
+      </a>
       {isMenuOpen && (
-        <div className="menu-open" onClick={() => setMenuOpen(!isMenuOpen)}>
+        <div className="menu-open">
           <div className="album-list">
-            <a href="/" className="album-item">
-              Home
-            </a>
-            <a href="/japan" className="album-item">
-              Japan
-            </a>
-            <a href="/austria" className="album-item">
-              Austria
-            </a>
-            <a href="/new-zealand" className="album-item">
-              New Zealand
-            </a>
-            <a href="/spain" className="album-item">
-              Spain
-            </a>
-            <a href="/random" className="album-item">
-              Random
-            </a>
-            <a href="/argentina" className="album-item">
-              Argentina
-            </a>
+            <AlbumPreviewItem
+              coverUrl={japanCover}
+              title={albumTitlesConstants.japan}
+              path="/japan"
+            />
+            <AlbumPreviewItem
+              coverUrl={newZealandCover}
+              title={albumTitlesConstants.newZealand}
+              path="/new-zealand"
+            />
+            <AlbumPreviewItem
+              coverUrl={austriaCover}
+              title={albumTitlesConstants.austria}
+              path="/austria"
+            />
+            <AlbumPreviewItem
+              coverUrl={argentinaCover}
+              title={albumTitlesConstants.argentina}
+              path="/argentina"
+            />
+            <AlbumPreviewItem
+              coverUrl={franceCover}
+              title={albumTitlesConstants.france}
+              path="/france"
+            />
+            <AlbumPreviewItem
+              coverUrl={spainCover}
+              title={albumTitlesConstants.spain}
+              path="/spain"
+            />
+            <AlbumPreviewItem
+              coverUrl={""}
+              title={albumTitlesConstants.random}
+              path="/random"
+            />
+            <AlbumPreviewItem
+              coverUrl={""}
+              title={albumTitlesConstants.mistakes}
+              path="/mistakes"
+            />
           </div>
         </div>
       )}

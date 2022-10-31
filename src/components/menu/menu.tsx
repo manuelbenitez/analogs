@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import Icon from "../icon/icon";
-import { MdSwitchCamera } from "react-icons/md";
 import "./menu.scss";
 const Menu = () => {
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
   return (
     <>
-      <div className="icon-container" onClick={() => setMenuOpen(!isMenuOpen)}>
-        <Icon icon={<MdSwitchCamera />} />
+      <div className="menu-title" onClick={() => setMenuOpen(!isMenuOpen)}>
+        {"MENU"}
       </div>
       {isMenuOpen && (
         <div className="menu-open" onClick={() => setMenuOpen(!isMenuOpen)}>

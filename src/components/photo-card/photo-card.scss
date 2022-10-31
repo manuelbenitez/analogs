@@ -1,0 +1,19 @@
+.card-container {
+  position: relative;
+  width: 30rem;
+  height: 15rem;
+  flex-grow: 1;
+  box-shadow: 0.5px 0.5px 2px rgba(173, 173, 173, 0.589);
+
+
+  :hover {
+    box-shadow: 0.5px 0.5px 3px rgba(173, 173, 173, 0.589);
+  }
+
+  .photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

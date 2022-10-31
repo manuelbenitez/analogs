@@ -1,0 +1,37 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.212);
+
+  width: 100vw;
+  height: 100vh;
+  margin-left: -36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .backdrop {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+
+    background-color: rgba(0, 0, 0, 0);
+
+    width: 100vw;
+    height: 100vh;
+    margin-left: -36px;
+  }
+
+  .modal-image {
+    position: relative;
+    z-index: 5;
+    width: auto;
+    height: auto;
+  }
+
+  .vertical {
+    width: 30%;
+  }
+}

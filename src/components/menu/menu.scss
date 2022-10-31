@@ -1,8 +1,9 @@
 .menu-title {
-  position: absolute;
+  position: fixed;
+  top: 1rem;
   z-index: 16;
-  margin: 1rem;
-
+  margin-left: 1rem;
+  color: white;
 
   font-family: Teko, sans-serif;
   font-size: 20px;

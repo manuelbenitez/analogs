@@ -1,10 +1,37 @@
-.album-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
+.page-container {
+  width: 100%;
+  background-color: black;
 
-  margin: 20px;
+  display: flex;
+
+  .page-hero-image-container {
+    width: 100%;
+    height: 90vh;
+    position: sticky;
+    top: 4rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .page-hero-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .album-container {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    gap: 20px;
+
+    margin: 20px;
+    height: auto;
+  }
+
 }

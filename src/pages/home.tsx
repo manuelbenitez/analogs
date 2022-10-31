@@ -28,58 +28,42 @@ const Home = () => {
         <AlbumPreviewItem
           coverUrl={japanCover}
           title={albumTitlesConstants.japan}
-          onClick={function (): void {
-            throw new Error("Function not implemented.");
-          }}
+          path="/japan"
         />
         <AlbumPreviewItem
           coverUrl={newZealandCover}
           title={albumTitlesConstants.newZealand}
-          onClick={function (): void {
-            throw new Error("Function not implemented.");
-          }}
+          path="/new-zealand"
         />
         <AlbumPreviewItem
           coverUrl={austriaCover}
           title={albumTitlesConstants.austria}
-          onClick={function (): void {
-            throw new Error("Function not implemented.");
-          }}
+          path="/austria"
         />
         <AlbumPreviewItem
           coverUrl={argentinaCover}
           title={albumTitlesConstants.argentina}
-          onClick={function (): void {
-            throw new Error("Function not implemented.");
-          }}
+          path="/argentina"
         />
         <AlbumPreviewItem
           coverUrl={franceCover}
           title={albumTitlesConstants.france}
-          onClick={function (): void {
-            throw new Error("Function not implemented.");
-          }}
+          path="/france"
         />
         <AlbumPreviewItem
           coverUrl={spainCover}
           title={albumTitlesConstants.spain}
-          onClick={function (): void {
-            throw new Error("Function not implemented.");
-          }}
+          path="/spain"
         />
         <AlbumPreviewItem
           coverUrl={""}
           title={albumTitlesConstants.random}
-          onClick={function (): void {
-            throw new Error("Function not implemented.");
-          }}
+          path="/random"
         />
         <AlbumPreviewItem
           coverUrl={""}
           title={albumTitlesConstants.mistakes}
-          onClick={function (): void {
-            throw new Error("Function not implemented.");
-          }}
+          path="/mistakes"
         />
       </div>
     </div>

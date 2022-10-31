@@ -1,16 +1,16 @@
 import React, { useCallback, useEffect, useState } from "react";
 import PhotoCard from "../components/photo-card/photo-card";
 import { IPhotoCard } from "../components/photo-card/photo-card.types";
-import { japanAlbumConstants } from "../constants/japan.constants";
+import { newZealandConstants } from "../constants/new-zealand.constants";
 import "./pages.scss";
 
-const Japan = () => {
+const NewZealand = () => {
   const [photos, setPhotos] = useState<IPhotoCard[]>([]);
   const [source, setSource] = useState<string>();
 
   const fetchPhotos = useCallback(async () => {
     setTimeout(() => {
-      setPhotos(japanAlbumConstants);
+      setPhotos(newZealandConstants);
     }, 100);
     setTimeout(() => {
       setSource(photos[0]?.imageUrl);
@@ -40,4 +40,4 @@ const Japan = () => {
   );
 };
 
-export default Japan;
+export default NewZealand;

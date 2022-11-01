@@ -1,15 +1,35 @@
-import React from "react";
 import "./album-preview-item.scss";
-
+import { motion } from "framer-motion";
 import { IAlbumPreviewItem } from "./album-preview-item.d.types";
+
 const AlbumPreviewItem = ({ coverUrl, title, path }: IAlbumPreviewItem) => {
   return (
-    <a className="album-preview-item" href={path}>
-      <div className="cover-container">
+    <motion.a
+      whileHover={{ scale: 1.01 }}
+      className="album-preview-item"
+      href={path}
+    >
+      <motion.div
+        style={{
+          filter: "grayscale(100%)",
+          opacity: 0.2,
+          backgroundColor: "rgba(230, 230, 230, 0.658)",
+        }}
+        animate={{ filter: "grayscale(0%)", opacity: 1 }}
+        transition={{ duration: 3 }}
+        className="cover-container"
+      >
         <img src={coverUrl} alt="" className="cover-image" />
-      </div>
-      <img className="album-title" src={title} alt="" />
-    </a>
+      </motion.div>
+      <motion.img
+        style={{ filter: "grayscale(100%)", opacity: 0 }}
+        animate={{ filter: "grayscale(0%)", opacity: 1 }}
+        transition={{ duration: 3 }}
+        className="album-title"
+        src={title}
+        alt=""
+      />
+    </motion.a>
   );
 };
 

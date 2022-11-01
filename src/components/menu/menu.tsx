@@ -6,7 +6,7 @@ import austriaCover from "../../assets/Austria/Innsbruck/Black and White/033_N32
 import argentinaCover from "../../assets/Argentina/Casamiento/Segundo Rollo/imm005_8.jpg";
 import franceCover from "../../assets/France/imm000_1.jpg";
 import spainCover from "../../assets/Spain/IMG_2501.JPG";
-import randomCover from "../../assets/Austria/Innsbruck/Black and White/imm017_N17.jpg";
+import randomCover from "../../assets/Austria/Innsbruck/Black and White/017_N17.jpg";
 import aboutCover from "../../assets/New Zealand/Primer Rollo/008_8A.jpg";
 import "./menu.scss";
 import { albumTitlesConstants } from "../../components/album-preview-item/title.constants";

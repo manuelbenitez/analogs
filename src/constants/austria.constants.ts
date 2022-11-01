@@ -1,8 +1,5 @@
 import { IPhotoCard } from "../components/photo-card/photo-card.types";
 import austria1 from "../assets/Austria/Innsbruck/Black and White/002_N1.jpg";
-import austria2 from "../assets/Austria/Innsbruck/Black and White/003_N2.jpg";
-import austria3 from "../assets/Austria/Innsbruck/Black and White/006_N5.jpg";
-import austria4 from "../assets/Austria/Innsbruck/Black and White/007_N6.jpg";
 import austria5 from "../assets/Austria/Innsbruck/Black and White/008_N7.jpg";
 import austria6 from "../assets/Austria/Innsbruck/Black and White/010_N10.jpg";
 import austria7 from "../assets/Austria/Innsbruck/Black and White/011_N10.jpg";
@@ -12,10 +9,8 @@ import austria10 from "../assets/Austria/Innsbruck/Black and White/014_N13.jpg";
 import austria11 from "../assets/Austria/Innsbruck/Black and White/015_N14.jpg";
 import austria12 from "../assets/Austria/Innsbruck/Black and White/015_N15.jpg";
 import austria13 from "../assets/Austria/Innsbruck/Black and White/016_N16.jpg";
-import austria14 from "../assets/Austria/Innsbruck/Black and White/017_N17.jpg";
 import austria15 from "../assets/Austria/Innsbruck/Black and White/018_N17.jpg";
 import austria16 from "../assets/Austria/Innsbruck/Black and White/018_N18.jpg";
-import austria17 from "../assets/Austria/Innsbruck/Black and White/020_N20.jpg";
 import austria18 from "../assets/Austria/Innsbruck/Black and White/022_N21.jpg";
 import austria19 from "../assets/Austria/Innsbruck/Black and White/023_N23.jpg";
 import austria20 from "../assets/Austria/Innsbruck/Black and White/024_N23.jpg";
@@ -29,7 +24,6 @@ import austria27 from "../assets/Austria/Innsbruck/Black and White/031_N30.jpg";
 import austria28 from "../assets/Austria/Innsbruck/Black and White/032_N31.jpg";
 import austria29 from "../assets/Austria/Innsbruck/Black and White/033_N32.jpg";
 import austria30 from "../assets/Austria/Innsbruck/Black and White/A001_N0.jpg";
-import austria31 from "../assets/Austria/Innsbruck/Black and White/A002_N1.jpg";
 import austria32 from "../assets/Austria/Innsbruck/Black and White/A003_N2.jpg";
 import austria33 from "../assets/Austria/Innsbruck/Black and White/A004_N3.jpg";
 import austria34 from "../assets/Austria/Innsbruck/Colors/imm004_4.jpg";
@@ -54,9 +48,9 @@ import austria52 from "../assets/Austria/Innsbruck/Colors/imm021_25.jpg";
 
 export const austriaConstants: IPhotoCard[] = [
   { imageUrl: austria1 },
-  { imageUrl: austria2 },
-  { imageUrl: austria3 },
-  { imageUrl: austria4 },
+  // { imageUrl: austria2 },
+  // { imageUrl: austria3 },
+  // { imageUrl: austria4 },
   { imageUrl: austria5 },
   { imageUrl: austria6 },
   { imageUrl: austria7 },
@@ -66,10 +60,10 @@ export const austriaConstants: IPhotoCard[] = [
   { imageUrl: austria11 },
   { imageUrl: austria12 },
   { imageUrl: austria13 },
-  { imageUrl: austria14 },
+  // { imageUrl: austria14 },
   { imageUrl: austria15 },
   { imageUrl: austria16 },
-  { imageUrl: austria17 },
+  // { imageUrl: austria17 },
   { imageUrl: austria18 },
   { imageUrl: austria19 },
   { imageUrl: austria20 },
@@ -83,7 +77,7 @@ export const austriaConstants: IPhotoCard[] = [
   { imageUrl: austria28 },
   { imageUrl: austria29 },
   { imageUrl: austria30 },
-  { imageUrl: austria31 },
+  // { imageUrl: austria31 },
   { imageUrl: austria32 },
   { imageUrl: austria33 },
   { imageUrl: austria34 },

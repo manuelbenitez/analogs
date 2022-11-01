@@ -1,10 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Menu from "./components/menu/menu";
+import Argentina from "./pages/argentina";
 import Austria from "./pages/austria";
+import France from "./pages/france";
 import Home from "./pages/home";
 import Japan from "./pages/japan";
 import NewZealand from "./pages/new-zealand";
+import Random from "./pages/random";
+import Spain from "./pages/spain";
 function App() {
   return (
     <div className="App">
@@ -15,9 +19,10 @@ function App() {
           <Route path="/japan" element={<Japan />} />
           <Route path="/austria" element={<Austria />} />
           <Route path="/new-zealand" element={<NewZealand />} />
-          <Route path="/spain" element={<Japan />} />
-          <Route path="/random" element={<Japan />} />
-          <Route path="/argentina" element={<Japan />} />
+          <Route path="/spain" element={<Spain />} />
+          <Route path="/france" element={<France />} />
+          <Route path="/random" element={<Random />} />
+          <Route path="/argentina" element={<Argentina />} />
         </Routes>
       </Router>
     </div>

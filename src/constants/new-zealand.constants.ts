@@ -26,7 +26,6 @@ import newzealand24 from "../assets/New Zealand/Segundo Rollo/018_18A.jpg";
 import newzealand25 from "../assets/New Zealand/Segundo Rollo/020_20A.jpg";
 import newzealand26 from "../assets/New Zealand/Segundo Rollo/027_27A.jpg";
 import newzealand27 from "../assets/New Zealand/Segundo Rollo/030_30A.jpg";
-import newzealand28 from "../assets/New Zealand/Segundo Rollo/031_31A.jpg";
 import newzealand29 from "../assets/New Zealand/Segundo Rollo/034_34A.jpg";
 
 export const newZealandConstants: IPhotoCard[] = [
@@ -57,6 +56,5 @@ export const newZealandConstants: IPhotoCard[] = [
   { imageUrl: newzealand25 },
   { imageUrl: newzealand26 },
   { imageUrl: newzealand27 },
-  { imageUrl: newzealand28 },
   { imageUrl: newzealand29 },
 ];

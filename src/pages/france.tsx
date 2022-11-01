@@ -32,6 +32,7 @@ const France = () => {
             <PhotoCard
               imageUrl={photo.imageUrl}
               key={index}
+              opacityDelay={index / 5 - 0.8}
               onClick={() => setSource(photo.imageUrl)}
             />
           ))}

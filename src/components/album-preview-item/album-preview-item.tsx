@@ -16,7 +16,7 @@ const AlbumPreviewItem = ({ coverUrl, title, path }: IAlbumPreviewItem) => {
           backgroundColor: "rgba(230, 230, 230, 0.658)",
         }}
         animate={{ filter: "grayscale(0%)", opacity: 1 }}
-        transition={{ duration: 3 }}
+        transition={{ duration: 1.7 }}
         className="cover-container"
       >
         <img src={coverUrl} alt="" className="cover-image" />
@@ -24,7 +24,7 @@ const AlbumPreviewItem = ({ coverUrl, title, path }: IAlbumPreviewItem) => {
       <motion.img
         style={{ filter: "grayscale(100%)", opacity: 0 }}
         animate={{ filter: "grayscale(0%)", opacity: 1 }}
-        transition={{ duration: 3 }}
+        transition={{ duration: 1.7 }}
         className="album-title"
         src={title}
         alt=""

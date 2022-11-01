@@ -32,6 +32,7 @@ const Japan = () => {
             <PhotoCard
               imageUrl={photo.imageUrl}
               key={index}
+              opacityDelay={index / 5 - 0.8}
               vertical={photo.vertical}
               onClick={() => setSource(photo.imageUrl)}
             />

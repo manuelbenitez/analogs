@@ -17,6 +17,8 @@ import france11 from "../assets/France/imm010_11.jpg";
 import france12 from "../assets/France/imm011_11.jpg";
 import france17 from "../assets/France/imm019_20.jpg";
 import { IPhotoCard } from "../components/photo-card/photo-card.types";
+import austria53 from "../assets/Austria/Innsbruck/Colors/001_33.jpg";
+
 
 export const randomConstans: IPhotoCard[] = [
   { imageUrl: argentina32 },
@@ -37,4 +39,5 @@ export const randomConstans: IPhotoCard[] = [
   { imageUrl: france11 },
   { imageUrl: france12 },
   { imageUrl: france17 },
+  { imageUrl: austria53 },
 ];

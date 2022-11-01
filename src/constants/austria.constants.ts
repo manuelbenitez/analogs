@@ -45,6 +45,17 @@ import austria49 from "../assets/Austria/Innsbruck/Colors/imm019_23.jpg";
 import austria50 from "../assets/Austria/Innsbruck/Colors/imm020_22.jpg";
 import austria51 from "../assets/Austria/Innsbruck/Colors/imm020_24.jpg";
 import austria52 from "../assets/Austria/Innsbruck/Colors/imm021_25.jpg";
+import austria54 from "../assets/Austria/Innsbruck/Colors/002_2.jpg";
+import austria55 from "../assets/Austria/Innsbruck/Colors/004_4.jpg";
+import austria56 from "../assets/Austria/Innsbruck/Colors/006_6.jpg";
+import austria57 from "../assets/Austria/Innsbruck/Colors/011_11.jpg";
+import austria58 from "../assets/Austria/Innsbruck/Colors/012_12.jpg";
+import austria59 from "../assets/Austria/Innsbruck/Colors/014_14.jpg";
+import austria60 from "../assets/Austria/Innsbruck/Colors/015_15.jpg";
+import austria61 from "../assets/Austria/Innsbruck/Colors/016_16.jpg";
+import austria62 from "../assets/Austria/Innsbruck/Colors/020_21.jpg";
+import austria63 from "../assets/Austria/Innsbruck/Colors/021_22.jpg";
+import austria64 from "../assets/Austria/Innsbruck/Colors/026_27.jpg";
 
 export const austriaConstants: IPhotoCard[] = [
   { imageUrl: austria1 },
@@ -99,4 +110,16 @@ export const austriaConstants: IPhotoCard[] = [
   { imageUrl: austria50 },
   { imageUrl: austria51 },
   { imageUrl: austria52 },
+  // { imageUrl: austria53 },
+  { imageUrl: austria54 },
+  { imageUrl: austria55 },
+  { imageUrl: austria56 },
+  { imageUrl: austria57 },
+  { imageUrl: austria58 },
+  { imageUrl: austria59 },
+  { imageUrl: austria60 },
+  { imageUrl: austria61 },
+  { imageUrl: austria62 },
+  { imageUrl: austria63 },
+  { imageUrl: austria64 },
 ];

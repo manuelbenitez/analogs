@@ -31,6 +31,7 @@ const NewZealand = () => {
           photos.map((photo, index) => (
             <PhotoCard
               imageUrl={photo.imageUrl}
+              opacityDelay={index / 5 - 0.8}
               key={index}
               onClick={() => setSource(photo.imageUrl)}
             />

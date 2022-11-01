@@ -23,6 +23,48 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
+
+      animation-name: page-image-fade;
+      animation-timing-function: ease-in-out;
+      animation-duration: 1s;
+
+      @keyframes page-image-fade {
+        0% {
+          opacity: 0;
+        }
+
+        17% {
+          opacity: 0.2;
+        }
+
+        25% {
+          opacity: 0.3;
+        }
+
+        50% {
+          opacity: 0.4;
+        }
+
+        60% {
+          opacity: 0.5;
+        }
+
+        70% {
+          opacity: 0.6;
+        }
+
+        80% {
+          opacity: 0.7;
+        }
+
+        90% {
+          opacity: 0.85;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
     }
   }
 
@@ -33,17 +75,15 @@
     top: 0;
     gap: 20px;
     background-color: rgb(19, 19, 19);
-    margin-left: 20px;
-    margin-right: 20px;
     height: auto;
-    padding-left: 35px;
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding: 35px;
     border-left: 1px solid rgb(107, 88, 126);
 
     @media (max-width: 1313px) {
       width: 100%;
       height: 100%;
+      border-left: 0px solid rgb(107, 88, 126);
+      background-color: black;
     }
   }
 

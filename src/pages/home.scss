@@ -19,6 +19,8 @@
       letter-spacing: 5px;
       font-size: 90px;
       color: white;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: rgba(129, 129, 129, 0.664);
     }
 
     .hero-image {
@@ -72,9 +74,11 @@
     img:nth-of-type(4) {
       animation-delay: 7s;
     }
+
     img:nth-of-type(5) {
       animation-delay: 5s;
     }
+
     img:nth-of-type(6) {
       animation-delay: 2s;
     }

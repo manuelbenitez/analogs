@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Menu from "./components/menu/menu";
+import About from "./pages/about";
 import Argentina from "./pages/argentina";
 import Austria from "./pages/austria";
 import France from "./pages/france";
@@ -23,6 +24,7 @@ function App() {
           <Route path="/france" element={<France />} />
           <Route path="/random" element={<Random />} />
           <Route path="/argentina" element={<Argentina />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </Router>
     </div>

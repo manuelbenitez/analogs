@@ -46,6 +46,7 @@ import austria47 from "../assets/Austria/Innsbruck/Colors/imm018_22.jpg";
 import austria49 from "../assets/Austria/Innsbruck/Colors/imm019_23.jpg";
 import austria50 from "../assets/Austria/Innsbruck/Colors/imm020_22.jpg";
 import austria51 from "../assets/Austria/Innsbruck/Colors/imm020_24.jpg";
+import austria6 from "../assets/Austria/Innsbruck/Black and White/010_N10.jpg";
 import austria52 from "../assets/Austria/Innsbruck/Colors/imm021_25.jpg";
 import austria54 from "../assets/Austria/Innsbruck/Colors/002_2.jpg";
 import austria55 from "../assets/Austria/Innsbruck/Colors/004_4.jpg";
@@ -97,6 +98,7 @@ export const austriaConstants: IPhotoCard[] = [
   { imageUrl: austria1 },
   { imageUrl: austria5 },
   { imageUrl: austria7 },
+  { imageUrl: austria6 },
   { imageUrl: austria8 },
   { imageUrl: austria9 },
   { imageUrl: austria10 },

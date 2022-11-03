@@ -62,7 +62,7 @@ const Menu = () => {
             <AlbumPreviewItem
               coverUrl={aboutCover}
               title={albumTitlesConstants.mistakes}
-              path="/mistakes"
+              path="/about"
             />
           </div>
         </div>

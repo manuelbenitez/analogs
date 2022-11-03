@@ -19,7 +19,7 @@ import france17 from "../assets/France/imm019_20.jpg";
 import { IPhotoCard } from "../components/photo-card/photo-card.types";
 import austria53 from "../assets/Austria/Innsbruck/Colors/001_33.jpg";
 import austria13a from "../assets/Austria/Innsbruck/Black and White/017_N16.jpg";
-import austria6 from "../assets/Austria/Innsbruck/Black and White/010_N10.jpg";
+
 import austria48 from "../assets/Austria/Innsbruck/Colors/imm019_21.jpg";
 import randomAustria from "../assets/Austria/imm007_N7.jpg";
 import austria68 from "../assets/Austria/Mayrhofen/006_24.jpg";
@@ -46,7 +46,6 @@ export const randomConstans: IPhotoCard[] = [
   { imageUrl: france12 },
   { imageUrl: france17 },
   { imageUrl: austria53 },
-  { imageUrl: austria6 },
   { imageUrl: austria13a },
   { imageUrl: randomAustria },
   { imageUrl: austria68 },

@@ -8,6 +8,7 @@ import photo12 from "../assets/Japan/Primer rollo/FH000012.JPG";
 import photo13 from "../assets/Japan/Primer rollo/FH000013.JPG";
 import photo14 from "../assets/Japan/Primer rollo/FH000014.JPG";
 import photo16 from "../assets/Japan/Primer rollo/FH000016.JPG";
+import photo17 from "../assets/Japan/Primer rollo/FH000017.JPG";
 import photo19 from "../assets/Japan/Primer rollo/FH000019.JPG";
 import photo20 from "../assets/Japan/Primer rollo/FH000020.JPG";
 import photo21 from "../assets/Japan/Primer rollo/FH000021.JPG";
@@ -37,7 +38,7 @@ import photo50 from "../assets/Japan/Segundo rollo/FH000012.JPG";
 import photo51 from "../assets/Japan/Segundo rollo/FH000013.JPG";
 import photo52 from "../assets/Japan/Segundo rollo/FH000014.JPG";
 import photo53 from "../assets/Japan/Segundo rollo/FH000017.JPG";
-import photo54 from "../assets/Japan/Segundo rollo/FH000018.JPG";
+// import photo54 from "../assets/Japan/Segundo rollo/FH000018.JPG";
 import photo55 from "../assets/Japan/Segundo rollo/FH000018.JPG";
 import photo56 from "../assets/Japan/Segundo rollo/FH000020.JPG";
 import photo57 from "../assets/Japan/Segundo rollo/FH000021.JPG";
@@ -45,7 +46,9 @@ import photo58 from "../assets/Japan/Segundo rollo/FH000022.JPG";
 import photo59 from "../assets/Japan/Segundo rollo/FH000023.JPG";
 import photo60 from "../assets/Japan/Segundo rollo/FH000024.JPG";
 import photo61 from "../assets/Japan/Segundo rollo/FH000029.JPG";
+import photo61a from "../assets/Japan/Segundo rollo/FH000028.JPG";
 import photo62 from "../assets/Japan/Segundo rollo/FH000031.JPG";
+import photo62a from "../assets/Japan/Segundo rollo/FH000030.JPG";
 import photo63 from "../assets/Japan/Segundo rollo/FH000032.JPG";
 import photo64 from "../assets/Japan/Segundo rollo/FH000034.JPG";
 import photo65 from "../assets/Japan/Segundo rollo/FH000037.JPG";
@@ -54,7 +57,7 @@ export const japanAlbumConstants: IPhotoCard[] = [
   { imageUrl: photo2, vertical: true },
   { imageUrl: photo5 },
   { imageUrl: photo6 },
-  { imageUrl: photo7 },
+  // { imageUrl: photo7 },
   { imageUrl: photo8 },
   // { imageUrl: photo11 },
   { imageUrl: photo12 },
@@ -62,6 +65,7 @@ export const japanAlbumConstants: IPhotoCard[] = [
   { imageUrl: photo14 },
   // { imageUrl: photo15 },
   { imageUrl: photo16 },
+  { imageUrl: photo17 },
   // { imageUrl: photo18 },
   { imageUrl: photo19 },
   { imageUrl: photo20 },
@@ -92,7 +96,7 @@ export const japanAlbumConstants: IPhotoCard[] = [
   { imageUrl: photo51 },
   { imageUrl: photo52 },
   { imageUrl: photo53 },
-  { imageUrl: photo54 },
+  // { imageUrl: photo54 },
   { imageUrl: photo55 },
   { imageUrl: photo56 },
   { imageUrl: photo57 },
@@ -100,6 +104,8 @@ export const japanAlbumConstants: IPhotoCard[] = [
   { imageUrl: photo59 },
   { imageUrl: photo60 },
   { imageUrl: photo61 },
+  { imageUrl: photo61a },
+  { imageUrl: photo62a },
   { imageUrl: photo62 },
   { imageUrl: photo63 },
   { imageUrl: photo64 },

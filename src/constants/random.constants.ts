@@ -18,7 +18,16 @@ import france12 from "../assets/France/imm011_11.jpg";
 import france17 from "../assets/France/imm019_20.jpg";
 import { IPhotoCard } from "../components/photo-card/photo-card.types";
 import austria53 from "../assets/Austria/Innsbruck/Colors/001_33.jpg";
-
+import austria13a from "../assets/Austria/Innsbruck/Black and White/017_N16.jpg";
+import austria6 from "../assets/Austria/Innsbruck/Black and White/010_N10.jpg";
+import austria48 from "../assets/Austria/Innsbruck/Colors/imm019_21.jpg";
+import randomAustria from "../assets/Austria/imm007_N7.jpg";
+import austria68 from "../assets/Austria/Mayrhofen/006_24.jpg";
+import argentina21a from "../assets/Argentina/000039.BMP";
+import france26 from "../assets/France/imm015_16.jpg";
+import france27 from "../assets/France/imm017_17.jpg";
+import argentina1 from "../assets/Argentina/Casamiento/imm000_0A.jpg";
+import austria6a from "../assets/Austria/Innsbruck/Black and White/010_N9.jpg";
 
 export const randomConstans: IPhotoCard[] = [
   { imageUrl: argentina32 },
@@ -26,10 +35,7 @@ export const randomConstans: IPhotoCard[] = [
   { imageUrl: spain1 },
   { imageUrl: spain5 },
   { imageUrl: spain7 },
-  { imageUrl: spain9 },
   { imageUrl: spain10 },
-  { imageUrl: spain15 },
-  { imageUrl: austria2 },
   { imageUrl: austria3 },
   { imageUrl: austria14 },
   { imageUrl: austria4 },
@@ -40,4 +46,17 @@ export const randomConstans: IPhotoCard[] = [
   { imageUrl: france12 },
   { imageUrl: france17 },
   { imageUrl: austria53 },
+  { imageUrl: austria6 },
+  { imageUrl: austria13a },
+  { imageUrl: randomAustria },
+  { imageUrl: austria68 },
+  { imageUrl: argentina21a },
+  { imageUrl: spain9 }, //flor
+  { imageUrl: austria2 }, //flor
+  { imageUrl: spain15 }, // flor
+  { imageUrl: austria48 }, //flor
+  { imageUrl: france26 }, //flor
+  { imageUrl: argentina1 }, //flor
+  { imageUrl: france27 },
+  { imageUrl: austria6a },
 ];

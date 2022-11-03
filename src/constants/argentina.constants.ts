@@ -1,4 +1,3 @@
-import argentina1 from "../assets/Argentina/Casamiento/imm000_0A.jpg";
 import argentina2 from "../assets/Argentina/Casamiento/imm001_1A.jpg";
 import argentina3 from "../assets/Argentina/Casamiento/imm002_2A.jpg";
 import argentina4 from "../assets/Argentina/Casamiento/imm003_4.jpg";
@@ -17,6 +16,8 @@ import argentina16 from "../assets/Argentina/Casamiento/Segundo Rollo/imm005_8.j
 import argentina17 from "../assets/Argentina/Casamiento/Segundo Rollo/imm006_9.jpg";
 import argentina18 from "../assets/Argentina/Casamiento/Segundo Rollo/imm008_11.jpg";
 import argentina19 from "../assets/Argentina/Casamiento/Segundo Rollo/imm010_13.jpg";
+import argentina19a from "../assets/Argentina/Casamiento/Segundo Rollo/imm013_14.jpg";
+import argentina19b from "../assets/Argentina/Casamiento/Segundo Rollo/imm019_23.jpg";
 import argentina20 from "../assets/Argentina/000001.BMP";
 import argentina21 from "../assets/Argentina/000037.BMP";
 import argentina22 from "../assets/Argentina/000040.BMP";
@@ -26,6 +27,7 @@ import argentina25 from "../assets/Argentina/000047.BMP";
 import argentina26 from "../assets/Argentina/000048.BMP";
 import argentina27 from "../assets/Argentina/000053.BMP";
 import argentina28 from "../assets/Argentina/000056.BMP";
+import argentina28a from "../assets/Argentina/000057.BMP";
 import argentina30 from "../assets/Argentina/000061.BMP";
 import argentina31 from "../assets/Argentina/000062.BMP";
 import argentina34 from "../assets/Argentina/Segundo Rollo/000005.BMP";
@@ -50,6 +52,7 @@ export const argentinaConstants: IPhotoCard[] = [
   { imageUrl: argentina26 },
   { imageUrl: argentina27 },
   { imageUrl: argentina28 },
+  { imageUrl: argentina28a },
   { imageUrl: argentina30 },
   { imageUrl: argentina31 },
   // { imageUrl: argentina32 },
@@ -63,17 +66,18 @@ export const argentinaConstants: IPhotoCard[] = [
   { imageUrl: argentina41 },
   { imageUrl: argentina43 },
   { imageUrl: argentina44 },
-  { imageUrl: argentina1 },
   { imageUrl: argentina2 },
   { imageUrl: argentina3 },
   { imageUrl: argentina4 },
   { imageUrl: argentina5 },
-  { imageUrl: argentina6 },
   { imageUrl: argentina7 },
+  { imageUrl: argentina6 },
   { imageUrl: argentina8 },
   { imageUrl: argentina9 },
   { imageUrl: argentina10 },
   { imageUrl: argentina11 },
+  { imageUrl: argentina19a },
+  { imageUrl: argentina19b },
   { imageUrl: argentina12 },
   { imageUrl: argentina13 },
   { imageUrl: argentina14 },

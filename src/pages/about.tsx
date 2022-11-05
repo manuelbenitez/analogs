@@ -8,6 +8,7 @@ const About = () => {
         All the pictures on this website have been taken with analog cameras and
         none of them have been edited
         <br />
+        Pictures might take some time to load but I think it's worth the wait
         <br />
         <br />
         Thanks for passing by

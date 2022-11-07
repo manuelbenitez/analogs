@@ -32,7 +32,7 @@ import newzealand27 from "../assets/New Zealand/Segundo Rollo/030_30A.jpg";
 import newzealand29 from "../assets/New Zealand/Segundo Rollo/034_34A.jpg";
 import newzealand29a from "../assets/New Zealand/Segundo Rollo/035_35A.jpg";
 import newzealand29b from "../assets/New Zealand/Segundo Rollo/036_36A.jpg";
-
+import newzealand30 from "../assets/New Zealand/Primer Rollo/004_5A.jpg";
 export const newZealandConstants: IPhotoCard[] = [
   { imageUrl: newzealand1 },
   { imageUrl: newzealand2 },

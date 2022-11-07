@@ -28,8 +28,11 @@ import france26 from "../assets/France/imm015_16.jpg";
 import france27 from "../assets/France/imm017_17.jpg";
 import argentina1 from "../assets/Argentina/Casamiento/imm000_0A.jpg";
 import austria6a from "../assets/Austria/Innsbruck/Black and White/010_N9.jpg";
+import newzealand30 from "../assets/New Zealand/Primer Rollo/004_5A.jpg";
+
 
 export const randomConstans: IPhotoCard[] = [
+  { imageUrl: newzealand30 },
   { imageUrl: argentina32 },
   { imageUrl: argentina33 },
   { imageUrl: spain1 },

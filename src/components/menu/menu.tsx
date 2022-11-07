@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import AlbumPreviewItem from "../album-preview-item/album-preview-item";
-import japanCover from "../../assets/Japan/Segundo rollo/FH000001.JPG";
-import newZealandCover from "../../assets/New Zealand/Segundo Rollo/007_7A.jpg";
-import austriaCover from "../../assets/Austria/Innsbruck/Black and White/033_N32.jpg";
-import argentinaCover from "../../assets/Argentina/Casamiento/Segundo Rollo/imm005_8.jpg";
-import franceCover from "../../assets/France/imm000_1.jpg";
-import spainCover from "../../assets/Spain/IMG_2501.JPG";
-import randomCover from "../../assets/Austria/Innsbruck/Black and White/017_N17.jpg";
-import aboutCover from "../../assets/New Zealand/Primer Rollo/008_8A.jpg";
+import japanCover from "../../assets/album-covers/FH000001.JPG";
+import newZealandCover from "../../assets/album-covers/007_7A.jpg";
+import austriaCover from "../../assets/album-covers/033_N32.jpg";
+import argentinaCover from "../../assets/album-covers/imm005_8.jpg";
+import franceCover from "../../assets/album-covers/imm000_1.jpg";
+import spainCover from "../../assets/album-covers/IMG_2501.JPG";
+import randomCover from "../../assets/album-covers/017_N17.jpg";
+import aboutCover from "../../assets/album-covers/008_8A.jpg";
 import "./menu.scss";
 import { albumTitlesConstants } from "../../components/album-preview-item/title.constants";
 

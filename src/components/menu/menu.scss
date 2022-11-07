@@ -40,6 +40,10 @@
   background-color: rgba(0, 0, 0, 1);
   overflow-x: hidden;
 
+  ::-webkit-scrollbar-thumb {
+    visibility: hidden;
+  }
+
   .album-list {
     display: flex;
     flex-direction: row;

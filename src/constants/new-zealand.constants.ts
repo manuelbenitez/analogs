@@ -21,6 +21,7 @@ import newzealand18 from "../assets/New Zealand/Primer Rollo/000056.JPG";
 import newzealand19 from "../assets/New Zealand/Primer Rollo/000058.JPG";
 import newzealand19a from "../assets/New Zealand/Primer Rollo/000059.JPG";
 import newzealand20 from "../assets/New Zealand/Segundo Rollo/003_2A.jpg";
+import newzealand20a from "../assets/New Zealand/Segundo Rollo/004_3A.jpg";
 import newzealand21 from "../assets/New Zealand/Segundo Rollo/005_4A.jpg";
 import newzealand22 from "../assets/New Zealand/Segundo Rollo/006_5A.jpg";
 import newzealand23 from "../assets/New Zealand/Segundo Rollo/007_7A.jpg";
@@ -32,7 +33,6 @@ import newzealand27 from "../assets/New Zealand/Segundo Rollo/030_30A.jpg";
 import newzealand29 from "../assets/New Zealand/Segundo Rollo/034_34A.jpg";
 import newzealand29a from "../assets/New Zealand/Segundo Rollo/035_35A.jpg";
 import newzealand29b from "../assets/New Zealand/Segundo Rollo/036_36A.jpg";
-import newzealand30 from "../assets/New Zealand/Primer Rollo/004_5A.jpg";
 export const newZealandConstants: IPhotoCard[] = [
   { imageUrl: newzealand1 },
   { imageUrl: newzealand2 },
@@ -56,6 +56,7 @@ export const newZealandConstants: IPhotoCard[] = [
   { imageUrl: newzealand19 },
   { imageUrl: newzealand19a },
   { imageUrl: newzealand20 },
+  { imageUrl: newzealand20a },
   { imageUrl: newzealand21 },
   { imageUrl: newzealand22 },
   { imageUrl: newzealand23 },

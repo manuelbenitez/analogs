@@ -30,7 +30,6 @@ export const franceConstants: IPhotoCard[] = [
   { imageUrl: france12 },
   { imageUrl: france8 },
   { imageUrl: france10 },
-
   //SEGUNDO ROLLO
   { imageUrl: france1 },
   { imageUrl: france5 },

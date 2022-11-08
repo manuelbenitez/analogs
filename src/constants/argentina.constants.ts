@@ -19,7 +19,6 @@ import argentina19 from "../assets/Argentina/Casamiento/Segundo Rollo/imm010_13.
 import argentina19a from "../assets/Argentina/Casamiento/Segundo Rollo/imm013_14.jpg";
 import argentina19b from "../assets/Argentina/Casamiento/Segundo Rollo/imm019_23.jpg";
 import argentina20 from "../assets/Argentina/000001.BMP";
-import argentina21 from "../assets/Argentina/000037.BMP";
 import argentina22 from "../assets/Argentina/000040.BMP";
 import argentina23 from "../assets/Argentina/000041.BMP";
 import argentina24 from "../assets/Argentina/000043.BMP";
@@ -28,6 +27,7 @@ import argentina26 from "../assets/Argentina/000048.BMP";
 import argentina27 from "../assets/Argentina/000053.BMP";
 import argentina28 from "../assets/Argentina/000056.BMP";
 import argentina28a from "../assets/Argentina/000057.BMP";
+import argentina28b from "../assets/Argentina/000060.BMP";
 import argentina30 from "../assets/Argentina/000061.BMP";
 import argentina31 from "../assets/Argentina/000062.BMP";
 import argentina34 from "../assets/Argentina/Segundo Rollo/000005.BMP";
@@ -44,7 +44,6 @@ import { IPhotoCard } from "../components/photo-card/photo-card.types";
 
 export const argentinaConstants: IPhotoCard[] = [
   { imageUrl: argentina20 },
-  { imageUrl: argentina21 },
   { imageUrl: argentina22 },
   { imageUrl: argentina23 },
   { imageUrl: argentina24 },
@@ -53,10 +52,9 @@ export const argentinaConstants: IPhotoCard[] = [
   { imageUrl: argentina27 },
   { imageUrl: argentina28 },
   { imageUrl: argentina28a },
+  { imageUrl: argentina28b },
   { imageUrl: argentina30 },
   { imageUrl: argentina31 },
-  // { imageUrl: argentina32 },
-  // { imageUrl: argentina33 },
   { imageUrl: argentina34 },
   { imageUrl: argentina35 },
   { imageUrl: argentina36 },

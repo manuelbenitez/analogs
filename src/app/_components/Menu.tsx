@@ -53,7 +53,7 @@ export const Menu = () => {
             animate="visible"
             exit="exit"
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute inset-0 z-40 h-screen w-screen overflow-y-auto bg-black/85 backdrop-blur-sm"
+            className="scrollbar-hide absolute inset-0 z-40 h-screen w-screen overflow-y-auto bg-black/85 backdrop-blur-sm"
           >
             {/* Menu content goes here */}
             <motion.div
@@ -62,7 +62,7 @@ export const Menu = () => {
               animate="visible"
               exit="exit"
               transition={{ duration: 0.3, delay: 0.2 }}
-              className="p-8 text-white"
+              className="p-8"
             >
               {/* Add your menu items here */}
               <Albums />

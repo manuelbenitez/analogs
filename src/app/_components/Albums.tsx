@@ -55,7 +55,7 @@ const AlbumCard = ({ album }: AlbumCardProps) => {
     <div
       ref={cardRef}
       key={album}
-      className="flex cursor-pointer flex-col rounded-lg bg-amber-50 p-3 pb-4 shadow-xs shadow-amber-50 transition-transform duration-150 ease-out"
+      className="flex cursor-pointer flex-col rounded-lg bg-amber-50 p-3 pb-4 shadow-sm shadow-amber-50 transition-transform duration-150 ease-out"
       style={{
         transformStyle: "preserve-3d",
       }}

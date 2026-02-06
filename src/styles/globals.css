@@ -7,3 +7,13 @@
   --font-fondamento: var(--font-fondamento), serif;
   --font-comforter-brush: var(--font-comforter-brush), cursive;
 }
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

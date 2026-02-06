@@ -1,7 +1,7 @@
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Comforter_Brush, Fondamento } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
 
@@ -11,16 +11,27 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const geist = Geist({
+const fondamento = Fondamento({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  weight: ["400", "400"],
+  style: ["normal", "italic"],
+  variable: "--font-fondamento",
+});
+
+const comforterBrush = Comforter_Brush({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-comforter-brush",
 });
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>
+    <html
+      lang="en"
+      className={`${fondamento.variable} ${comforterBrush.variable} font-fondamento flex min-h-screen min-w-screen flex-col items-center justify-center bg-black text-white`}
+    >
       <body>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>

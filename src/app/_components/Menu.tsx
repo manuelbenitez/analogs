@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Albums } from "./Albums";
 
 // Animation variants for cleaner code
 const fadeVariants = {
@@ -52,7 +53,7 @@ export const Menu = () => {
             animate="visible"
             exit="exit"
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="fixed inset-0 z-40 bg-black/85 backdrop-blur-sm"
+            className="absolute inset-0 z-40 h-screen w-screen overflow-y-auto bg-black/85 backdrop-blur-sm"
           >
             {/* Menu content goes here */}
             <motion.div
@@ -64,6 +65,7 @@ export const Menu = () => {
               className="p-8 text-white"
             >
               {/* Add your menu items here */}
+              <Albums />
             </motion.div>
           </motion.div>
         )}

@@ -31,8 +31,18 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${fondamento.variable} ${comforterBrush.variable} font-fondamento flex min-h-screen min-w-screen flex-col items-center justify-center bg-black text-white`}
+      style={{
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
+        overflow: 'auto',
+      }}
     >
-      <body>
+      <body
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}
+      >
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>

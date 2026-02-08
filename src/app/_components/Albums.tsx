@@ -46,6 +46,7 @@ const AlbumCard = ({ album }: AlbumCardProps) => {
     // Apply neutral transform instead of removing it for smooth transition
     cardRef.current.style.transform =
       "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+    cardRef.current.style.transitionDuration = "0.35s";
     // Reset reflection
     reflectionRef.current.style.transform = "translateX(0) rotate(0deg)";
     reflectionRef.current.style.opacity = "0";
@@ -55,7 +56,7 @@ const AlbumCard = ({ album }: AlbumCardProps) => {
     <div
       ref={cardRef}
       key={album}
-      className="flex cursor-pointer flex-col rounded-lg bg-amber-50 p-3 pb-4 shadow-sm shadow-amber-50 transition-transform duration-150 ease-out"
+      className="flex cursor-pointer flex-col rounded-lg bg-white p-3 pb-4 shadow-sm shadow-white transition-transform duration-150 ease-out"
       style={{
         transformStyle: "preserve-3d",
       }}

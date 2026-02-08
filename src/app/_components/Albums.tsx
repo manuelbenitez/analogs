@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 interface AlbumCardProps {
-  album: string;
+  album: { path: string; name: string };
 }
 
 const AlbumCard = ({ album }: AlbumCardProps) => {
@@ -55,11 +55,12 @@ const AlbumCard = ({ album }: AlbumCardProps) => {
   return (
     <div
       ref={cardRef}
-      key={album}
+      key={album.path}
       className="flex cursor-pointer flex-col rounded-lg bg-white p-3 pb-4 shadow-sm shadow-white transition-transform duration-150 ease-out"
       style={{
         transformStyle: "preserve-3d",
       }}
+      onClick={() => window.location.assign(`/${album.path}`)}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -89,7 +90,9 @@ const AlbumCard = ({ album }: AlbumCardProps) => {
 
       {/* Title area on white background */}
       <div className="mt-3 flex items-center justify-center">
-        <h3 className="font-comforter-brush text-[5rem] text-black">{album}</h3>
+        <h3 className="font-comforter-brush text-[5rem] text-black">
+          {album.name}
+        </h3>
       </div>
     </div>
   );
@@ -100,19 +103,19 @@ export const Albums = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
         {[
-          "Japan",
-          "New Zealand",
-          "Austria",
-          "Argentina",
-          "France",
-          "España",
-          "Andorra",
-          "Indonesia",
-          "Australia",
-          "Random",
-          "About",
+          { path: "japan", name: "Japan" },
+          { path: "new-zealand", name: "New Zealand" },
+          { path: "austria", name: "Austria" },
+          { path: "argentina", name: "Argentina" },
+          { path: "france", name: "France" },
+          { path: "espana", name: "España" },
+          { path: "andorra", name: "Andorra" },
+          { path: "indonesia", name: "Indonesia" },
+          { path: "australia", name: "Australia" },
+          { path: "random", name: "Random" },
+          { path: "about", name: "About" },
         ].map((album) => (
-          <AlbumCard key={album} album={album} />
+          <AlbumCard key={album.path} album={album} />
         ))}
       </div>
     </div>

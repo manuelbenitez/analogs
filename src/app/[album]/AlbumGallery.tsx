@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface GalleryImage {
   src: string;
@@ -18,15 +19,25 @@ function Lightbox({
   onClose: () => void;
   onNavigate: (index: number) => void;
 }) {
+  const [direction, setDirection] = useState(0);
+
+  const navigate = useCallback(
+    (newIndex: number, dir: number) => {
+      setDirection(dir);
+      onNavigate(newIndex);
+    },
+    [onNavigate],
+  );
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowRight")
-        onNavigate((index + 1) % images.length);
+        navigate((index + 1) % images.length, 1);
       if (e.key === "ArrowLeft")
-        onNavigate((index - 1 + images.length) % images.length);
+        navigate((index - 1 + images.length) % images.length, -1);
     },
-    [index, images.length, onClose, onNavigate],
+    [index, images.length, onClose, navigate],
   );
 
   useEffect(() => {
@@ -58,25 +69,32 @@ function Lightbox({
         className="absolute left-4 z-10 cursor-pointer text-4xl text-white/50 transition-colors hover:text-white"
         onClick={(e) => {
           e.stopPropagation();
-          onNavigate((index - 1 + images.length) % images.length);
+          navigate((index - 1 + images.length) % images.length, -1);
         }}
       >
         &#8249;
       </button>
 
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={images[index]!.src}
-        alt=""
-        className="max-h-[90vh] max-w-[90vw] object-contain"
-        onClick={(e) => e.stopPropagation()}
-      />
+      <AnimatePresence mode="popLayout" custom={direction}>
+        <motion.img
+          key={index}
+          src={images[index]!.src}
+          alt=""
+          custom={direction}
+          initial={{ opacity: 0, x: direction * 80 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: direction * -80 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="max-h-[90vh] max-w-[90vw] object-contain"
+          onClick={(e) => e.stopPropagation()}
+        />
+      </AnimatePresence>
 
       <button
         className="absolute right-4 z-10 cursor-pointer text-4xl text-white/50 transition-colors hover:text-white"
         onClick={(e) => {
           e.stopPropagation();
-          onNavigate((index + 1) % images.length);
+          navigate((index + 1) % images.length, 1);
         }}
       >
         &#8250;

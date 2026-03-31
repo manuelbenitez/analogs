@@ -3,7 +3,6 @@ import "~/styles/globals.css";
 import { type Metadata } from "next";
 import { Caveat, Plus_Jakarta_Sans } from "next/font/google";
 
-import { TRPCReactProvider } from "~/trpc/react";
 import { Menu } from "./_components/Menu";
 import { LangProvider } from "./_contexts/LangContext";
 import { LangToggle } from "./_components/LangToggle";
@@ -58,13 +57,11 @@ export default function RootLayout({
           msOverflowStyle: "none",
         }}
       >
-        <TRPCReactProvider>
-          <LangProvider>
-            <Menu />
-            <LangToggle />
-            {children}
-          </LangProvider>
-        </TRPCReactProvider>
+        <LangProvider>
+          <Menu />
+          <LangToggle />
+          {children}
+        </LangProvider>
       </body>
     </html>
   );

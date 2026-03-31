@@ -22,21 +22,11 @@
     "upload:generate": "tsx scripts/generate-upload-commands.ts"
   },
   "dependencies": {
-    "@libsql/client": "^0.14.0",
-    "@t3-oss/env-nextjs": "^0.12.0",
-    "@tanstack/react-query": "^5.69.0",
-    "@trpc/client": "^11.0.0",
-    "@trpc/react-query": "^11.0.0",
-    "@trpc/server": "^11.0.0",
-    "drizzle-orm": "^0.41.0",
     "framer-motion": "^12.33.0",
     "lucide-react": "^1.7.0",
     "next": "^15.2.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "server-only": "^0.0.1",
-    "superjson": "^2.2.1",
-    "zod": "^3.24.2"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.1019.0",
@@ -45,10 +35,8 @@
     "@types/node": "^20.14.10",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "drizzle-kit": "^0.30.5",
     "eslint": "^9.23.0",
     "eslint-config-next": "^15.2.3",
-    "eslint-plugin-drizzle": "^0.2.3",
     "p-limit": "^7.3.0",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",

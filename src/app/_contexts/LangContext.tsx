@@ -7,6 +7,7 @@ type Lang = "es" | "en";
 const LangContext = createContext<{
   lang: Lang;
   setLang: (lang: Lang) => void;
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
 }>({ lang: "es", setLang: () => {} });
 
 export function LangProvider({ children }: { children: ReactNode }) {

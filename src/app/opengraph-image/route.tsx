@@ -1,16 +1,18 @@
 import { ImageResponse } from "next/og";
 
+export const dynamic = "force-dynamic";
+
 const IMAGE_BASE = "https://img.mbdev.to";
 
 async function getHomeImages() {
-  const res = await fetch(`${IMAGE_BASE}/api/list/home`, {
-    next: { revalidate: 3600 },
-  });
+  const res = await fetch(`${IMAGE_BASE}/api/list/home`);
 
   if (!res.ok) return [];
 
   const keys = (await res.json()) as string[];
-  return keys.filter((key) => key !== "home/").map((key) => `${IMAGE_BASE}/${key}`);
+  return keys
+    .filter((key) => key !== "home/" && !key.endsWith(".BMP"))
+    .map((key) => `${IMAGE_BASE}/${key}`);
 }
 
 export async function GET() {
@@ -29,7 +31,6 @@ export async function GET() {
           justifyContent: "center",
         }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={randomImage}
           alt=""

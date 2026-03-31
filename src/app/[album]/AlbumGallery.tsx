@@ -3,6 +3,9 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Track which full-size images have been preloaded this session
+const preloaded = new Set<string>();
+
 interface GalleryImage {
   src: string;
   thumbnail: string;
@@ -114,7 +117,6 @@ function LazyImage({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [fullLoaded, setFullLoaded] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -134,12 +136,12 @@ function LazyImage({
     return () => observer.disconnect();
   }, []);
 
-  // Preload full-size image in background once visible
+  // Preload full-size image for lightbox (only once per session)
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible || preloaded.has(src)) return;
     const img = new window.Image();
     img.src = src;
-    img.onload = () => setFullLoaded(true);
+    img.onload = () => preloaded.add(src);
   }, [isVisible, src]);
 
   return (
@@ -151,7 +153,7 @@ function LazyImage({
       {isVisible && (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={fullLoaded ? src : thumbnail}
+          src={thumbnail}
           alt=""
           className="h-full w-full object-cover grayscale-[40%] transition-all duration-500"
         />

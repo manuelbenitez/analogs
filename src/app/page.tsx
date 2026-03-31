@@ -1,23 +1,20 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { HomePage } from "./_pages/HomePage";
+import { useImageCache } from "./_contexts/ImageCacheContext";
 
-const IMAGE_BASE = "https://img.mbdev.to";
+export default function Home() {
+  const { getHomeImages } = useImageCache();
+  const [images, setImages] = useState<string[]>([]);
 
-async function getHomeImages() {
-  const res = await fetch(`${IMAGE_BASE}/api/list/home`, {
-    next: { revalidate: 3600 },
-  });
-
-  if (!res.ok) return [];
-
-  const keys = (await res.json()) as string[];
-
-  return keys
-    .filter((key) => key !== "home/")
-    .map((key) => `${IMAGE_BASE}/${key}`);
-}
-
-export default async function Home() {
-  const images = await getHomeImages();
+  useEffect(() => {
+    const load = async () => {
+      const imgs = await getHomeImages();
+      setImages(imgs);
+    };
+    void load();
+  }, [getHomeImages]);
 
   return <HomePage images={images} />;
 }

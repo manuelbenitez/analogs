@@ -1,11 +1,12 @@
 export interface Env {
   IMAGES: R2Bucket;
+  ADMIN_PASSWORD: string;
 }
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
 };
 
 const CONTENT_TYPES: Record<string, string> = {
@@ -29,7 +30,6 @@ async function handleListRequest(
   const album = parts[0];
 
   if (!album) {
-    // List all albums (top-level prefixes)
     const listed = await env.IMAGES.list({ delimiter: "/" });
     const albums = listed.delimitedPrefixes.map((p) => p.replace(/\/$/, ""));
     return Response.json(albums, { headers: CORS_HEADERS });
@@ -43,22 +43,145 @@ async function handleListRequest(
   do {
     const listed = await env.IMAGES.list({ prefix, cursor, limit: 1000 });
     for (const obj of listed.objects) {
+      // Skip the _order.json file from listings
+      if (obj.key.endsWith("_order.json")) continue;
       keys.push(obj.key);
     }
     cursor = listed.truncated ? listed.cursor : undefined;
   } while (cursor);
 
-  // Sort keys so images appear in a consistent order
-  keys.sort();
+  // Check for custom order
+  const orderObj = await env.IMAGES.get(`${album}/_order.json`);
+  if (orderObj) {
+    const order = (await orderObj.json()) as string[];
+    const keySet = new Set(keys);
+    const ordered: string[] = [];
 
+    // Add keys in the specified order
+    for (const key of order) {
+      if (keySet.has(key)) {
+        ordered.push(key);
+        keySet.delete(key);
+      }
+    }
+
+    // Append any new images not in the order file
+    const remaining = [...keySet].sort();
+    ordered.push(...remaining);
+
+    return Response.json(ordered, { headers: CORS_HEADERS });
+  }
+
+  // Default: alphabetical sort
+  keys.sort();
   return Response.json(keys, { headers: CORS_HEADERS });
+}
+
+async function handleOrderRequest(
+  request: Request,
+  url: URL,
+  env: Env,
+): Promise<Response> {
+  // Auth check
+  const auth = request.headers.get("Authorization");
+  if (auth !== `Bearer ${env.ADMIN_PASSWORD}`) {
+    return new Response("Unauthorized", { status: 401, headers: CORS_HEADERS });
+  }
+
+  const parts = url.pathname.replace("/api/order", "").split("/").filter(Boolean);
+  const album = parts[0];
+
+  if (!album) {
+    return new Response("Album required", { status: 400, headers: CORS_HEADERS });
+  }
+
+  const order = await request.json();
+  await env.IMAGES.put(`${album}/_order.json`, JSON.stringify(order), {
+    httpMetadata: { contentType: "application/json" },
+  });
+
+  return Response.json({ ok: true }, { headers: CORS_HEADERS });
+}
+
+async function handleUploadRequest(
+  request: Request,
+  url: URL,
+  env: Env,
+): Promise<Response> {
+  const auth = request.headers.get("Authorization");
+  if (auth !== `Bearer ${env.ADMIN_PASSWORD}`) {
+    return new Response("Unauthorized", { status: 401, headers: CORS_HEADERS });
+  }
+
+  const parts = url.pathname.replace("/api/upload", "").split("/").filter(Boolean);
+  const album = parts[0];
+  if (!album) {
+    return new Response("Album required", { status: 400, headers: CORS_HEADERS });
+  }
+
+  const formData = await request.formData();
+  const uploaded: string[] = [];
+
+  for (const [, value] of formData.entries()) {
+    if (!(value instanceof File)) continue;
+    const key = `${album}/${value.name}`;
+    await env.IMAGES.put(key, value.stream(), {
+      httpMetadata: { contentType: value.type },
+    });
+    uploaded.push(key);
+  }
+
+  // Append new images to _order.json
+  if (uploaded.length > 0) {
+    const orderObj = await env.IMAGES.get(`${album}/_order.json`);
+    let order: string[] = [];
+    if (orderObj) {
+      order = (await orderObj.json()) as string[];
+    }
+    order.push(...uploaded);
+    await env.IMAGES.put(`${album}/_order.json`, JSON.stringify(order), {
+      httpMetadata: { contentType: "application/json" },
+    });
+  }
+
+  return Response.json({ uploaded }, { headers: CORS_HEADERS });
+}
+
+async function handleDeleteRequest(
+  request: Request,
+  url: URL,
+  env: Env,
+): Promise<Response> {
+  const auth = request.headers.get("Authorization");
+  if (auth !== `Bearer ${env.ADMIN_PASSWORD}`) {
+    return new Response("Unauthorized", { status: 401, headers: CORS_HEADERS });
+  }
+
+  const key = decodeURIComponent(url.pathname.replace("/api/image/", ""));
+  if (!key) {
+    return new Response("Key required", { status: 400, headers: CORS_HEADERS });
+  }
+
+  await env.IMAGES.delete(key);
+
+  // Also update _order.json if it exists
+  const album = key.split("/")[0]!;
+  const orderObj = await env.IMAGES.get(`${album}/_order.json`);
+  if (orderObj) {
+    const order = (await orderObj.json()) as string[];
+    const updated = order.filter((k) => k !== key);
+    await env.IMAGES.put(`${album}/_order.json`, JSON.stringify(updated), {
+      httpMetadata: { contentType: "application/json" },
+    });
+  }
+
+  return Response.json({ ok: true }, { headers: CORS_HEADERS });
 }
 
 async function handleImageRequest(
   url: URL,
   env: Env,
 ): Promise<Response> {
-  // Strip leading slash to get the R2 key
   const key = decodeURIComponent(url.pathname.slice(1));
 
   if (!key) {
@@ -83,16 +206,27 @@ async function handleImageRequest(
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    // Handle CORS preflight
     if (request.method === "OPTIONS") {
       return new Response(null, { headers: CORS_HEADERS });
+    }
+
+    const url = new URL(request.url);
+
+    if (url.pathname.startsWith("/api/upload") && request.method === "POST") {
+      return handleUploadRequest(request, url, env);
+    }
+
+    if (url.pathname.startsWith("/api/order") && request.method === "PUT") {
+      return handleOrderRequest(request, url, env);
+    }
+
+    if (url.pathname.startsWith("/api/image/") && request.method === "DELETE") {
+      return handleDeleteRequest(request, url, env);
     }
 
     if (request.method !== "GET") {
       return new Response("Method Not Allowed", { status: 405 });
     }
-
-    const url = new URL(request.url);
 
     if (url.pathname.startsWith("/api/list")) {
       return handleListRequest(url, env);

@@ -8,6 +8,8 @@ binding = "IMAGES"
 bucket_name = "analogs-images"
 preview_bucket_name = "analogs-images"
 
-# CORS headers for image serving
+[vars]
+ADMIN_PASSWORD = "change-me-in-cloudflare-dashboard"
+
 [env.production]
 vars = { ENVIRONMENT = "production" }

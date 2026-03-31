@@ -7,6 +7,7 @@ import { Caveat, Plus_Jakarta_Sans } from "next/font/google";
 import { Menu } from "./_components/Menu";
 import { LangProvider } from "./_contexts/LangContext";
 import { LangToggle } from "./_components/LangToggle";
+import { ImageCacheProvider } from "./_contexts/ImageCacheContext";
 
 export const metadata: Metadata = {
   title: "A Digital Scrapbook",
@@ -71,9 +72,11 @@ export default function RootLayout({
           `}
         </Script>
         <LangProvider>
-          <Menu />
-          <LangToggle />
-          {children}
+          <ImageCacheProvider>
+            <Menu />
+            <LangToggle />
+            {children}
+          </ImageCacheProvider>
         </LangProvider>
       </body>
     </html>

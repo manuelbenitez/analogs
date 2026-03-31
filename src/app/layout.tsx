@@ -9,19 +9,19 @@ import { LangProvider } from "./_contexts/LangContext";
 import { LangToggle } from "./_components/LangToggle";
 
 export const metadata: Metadata = {
-  title: "Analogs — A Digital Scrapbook of Analog Pictures",
+  title: "A Digital Scrapbook",
   description:
     "Over a decade of film photography spanning New Zealand, Japan, Austria, Spain, Indonesia, Argentina, and more.",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "/icon.svg", type: "image/svg+xml" }],
   openGraph: {
-    title: "Analogs — A Digital Scrapbook of Analog Pictures",
+    title: "A Digital Scrapbook",
     description:
       "Over a decade of film photography spanning New Zealand, Japan, Austria, Spain, Indonesia, Argentina, and more.",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Analogs — A Digital Scrapbook of Analog Pictures",
+    title: "A Digital Scrapbook",
     description:
       "Over a decade of film photography spanning New Zealand, Japan, Austria, Spain, Indonesia, Argentina, and more.",
     images: ["/opengraph-image"],

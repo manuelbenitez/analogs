@@ -1,9 +1,13 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useLang } from "../_contexts/LangContext";
 
 export const LangToggle = () => {
   const { lang, setLang } = useLang();
+  const pathname = usePathname();
+
+  if (pathname !== "/" && pathname !== "/about") return null;
 
   return (
     <div className="fixed top-4 right-4 z-50 flex items-center gap-1 rounded border border-white/10 bg-black/50 px-4 py-2 text-xl">

@@ -165,7 +165,7 @@ export function AlbumGallery({ images }: { images: GalleryImage[] }) {
 
   return (
     <>
-      <div className="group/grid grid grid-cols-2 gap-1 px-4 pt-14 pb-4 sm:grid-cols-3 sm:gap-2 sm:px-8 lg:grid-cols-4">
+      <div className="group/grid grid grid-cols-2 gap-1 px-4 pt-20 pb-4 sm:grid-cols-3 sm:gap-2 sm:px-8 lg:grid-cols-4">
         {images.map((img, i) => (
           <LazyImage
             key={img.src}

@@ -92,7 +92,7 @@ const AlbumCard = ({ album }: AlbumCardProps) => {
 
       {/* Title area on white background */}
       <div className="mt-3 flex items-center justify-center">
-        <h3 className="font-caveat text-[4rem] text-black">
+        <h3 className="font-caveat text-[2.5rem] text-black sm:text-[4rem]">
           {album.name}
         </h3>
       </div>
@@ -102,8 +102,8 @@ const AlbumCard = ({ album }: AlbumCardProps) => {
 
 export const Albums = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
+    <div className="container mx-auto px-4 pt-20 pb-8">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 md:grid-cols-3 lg:grid-cols-4">
         {[
           { path: "japan", name: "Japan", cover: "japan.JPG" },
           { path: "new-zealand", name: "New Zealand", cover: "new-zealand.JPG" },

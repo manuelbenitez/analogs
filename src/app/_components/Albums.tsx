@@ -90,7 +90,7 @@ const AlbumCard = ({ album }: AlbumCardProps) => {
 
       {/* Title area on white background */}
       <div className="mt-3 flex items-center justify-center">
-        <h3 className="font-comforter-brush text-[5rem] text-black">
+        <h3 className="font-caveat text-[4rem] text-black">
           {album.name}
         </h3>
       </div>

@@ -1,10 +1,23 @@
-import { HydrateClient } from "~/trpc/server";
 import { HomePage } from "./_pages/HomePage";
 
+const IMAGE_BASE = "https://img.mbdev.to";
+
+async function getHomeImages() {
+  const res = await fetch(`${IMAGE_BASE}/api/list/home`, {
+    next: { revalidate: 3600 },
+  });
+
+  if (!res.ok) return [];
+
+  const keys = (await res.json()) as string[];
+
+  return keys
+    .filter((key) => key !== "home/")
+    .map((key) => `${IMAGE_BASE}/${key}`);
+}
+
 export default async function Home() {
-  return (
-    <HydrateClient>
-      <HomePage />
-    </HydrateClient>
-  );
+  const images = await getHomeImages();
+
+  return <HomePage images={images} />;
 }

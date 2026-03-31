@@ -1,0 +1,13 @@
+name = "analogs-images"
+main = "worker/index.ts"
+compatibility_date = "2024-01-01"
+
+# R2 bucket binding
+[[r2_buckets]]
+binding = "IMAGES"
+bucket_name = "analogs-images"
+preview_bucket_name = "analogs-images"
+
+# CORS headers for image serving
+[env.production]
+vars = { ENVIRONMENT = "production" }

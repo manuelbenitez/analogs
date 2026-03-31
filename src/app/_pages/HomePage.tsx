@@ -1,21 +1,34 @@
-import React from "react";
-import { TypewriterTitle } from "../_components/TypewritterTitle";
-import { Menu } from "../_components/Menu";
+"use client";
 
-export const HomePage = () => {
+import React, { useState, useEffect } from "react";
+
+export const HomePage = ({ images }: { images: string[] }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
-    <div
-      className="relative flex min-h-screen min-w-screen flex-col items-center justify-center px-4 py-16"
-      style={{
-        backgroundImage:
-          "url(https://media.licdn.com/dms/image/v2/D5616AQFkFIBzEfWQ2g/profile-displaybackgroundimage-shrink_350_1400/B56ZtIbZsXJIAc-/0/1766446706218?e=1772064000&v=beta&t=-RNoUFZ9eYblsNabHv8g-tsz8IcUAVY0-0-mSgNVFRU)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <Menu />
-      <TypewriterTitle />
+    <div className="relative flex min-h-screen min-w-screen flex-col items-center justify-center px-4 py-16">
+      {images.map((src, i) => (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          key={src}
+          src={src}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000"
+          style={{ opacity: i === currentIndex ? 1 : 0 }}
+        />
+      ))}
+      <div className="absolute inset-0 bg-black/40" />
+      <h1 className="relative z-10 text-center text-5xl leading-normal tracking-tight [text-shadow:0_2px_10px_rgba(0,0,0,0.5)] sm:text-[5rem]">
+        Digital Scrapbook of Analog Pictures
+      </h1>
     </div>
   );
 };

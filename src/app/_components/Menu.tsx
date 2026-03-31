@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, Images, X } from "lucide-react";
 import { Albums } from "./Albums";
 
-// Animation variants for cleaner code
 const fadeVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
@@ -19,12 +20,26 @@ const slideVariants = {
 
 export const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHomePage = pathname === "/";
+
   return (
     <>
-      <div className="absolute top-4 left-4 z-50">
+      <div className="fixed top-4 left-4 z-50 flex items-center gap-2">
+        {!isHomePage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="cursor-pointer rounded border border-white/10 bg-black/50 px-4 py-2 transition-all duration-300 hover:bg-black/70"
+            onClick={() => router.back()}
+          >
+            <h4 className="flex items-center gap-1 text-xl font-bold"><ChevronLeft size={22} /> Back</h4>
+          </motion.div>
+        )}
         <motion.div
           layout
-          className="cursor-pointer rounded bg-black/50 p-2 transition-all duration-300 hover:bg-black/70"
+          className="cursor-pointer rounded border border-white/10 bg-black/50 px-4 py-2 transition-all duration-300 hover:bg-black/70"
           onClick={() => setIsOpen(!isOpen)}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
@@ -38,13 +53,12 @@ export const Menu = () => {
               transition={{ duration: 0.5, ease: "easeInOut" }}
               layout
             >
-              {isOpen ? "Close" : "Albums"}
+              <span className="flex items-center gap-1 text-xl font-bold">{isOpen ? <><X size={22} /> Close</> : <><Images size={22} /> Albums</>}</span>
             </motion.h4>
           </AnimatePresence>
         </motion.div>
       </div>
 
-      {/* Full-screen menu overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -53,9 +67,8 @@ export const Menu = () => {
             animate="visible"
             exit="exit"
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="scrollbar-hide absolute inset-0 z-40 h-screen w-screen overflow-y-auto bg-black/85 backdrop-blur-sm"
+            className="scrollbar-hide fixed inset-0 z-40 h-screen w-screen overflow-y-auto bg-black/85 backdrop-blur-sm"
           >
-            {/* Menu content goes here */}
             <motion.div
               variants={fadeVariants}
               initial="hidden"
@@ -64,7 +77,6 @@ export const Menu = () => {
               transition={{ duration: 0.3, delay: 0.2 }}
               className="p-8"
             >
-              {/* Add your menu items here */}
               <Albums />
             </motion.div>
           </motion.div>

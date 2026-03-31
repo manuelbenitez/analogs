@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 
+const IMAGE_BASE = "https://img.mbdev.to/cover-images";
+
 interface AlbumCardProps {
-  album: { path: string; name: string };
+  album: { path: string; name: string; cover: string };
 }
 
 const AlbumCard = ({ album }: AlbumCardProps) => {
@@ -64,12 +66,12 @@ const AlbumCard = ({ album }: AlbumCardProps) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Photo area - black placeholder for now */}
       <div
         className="relative aspect-square w-full overflow-hidden bg-black"
         style={{
-          backgroundImage:
-            "url(https://media.licdn.com/dms/image/v2/D5616AQFkFIBzEfWQ2g/profile-displaybackgroundimage-shrink_350_1400/B56ZtIbZsXJIAc-/0/1766446706218?e=1772064000&v=beta&t=-RNoUFZ9eYblsNabHv8g-tsz8IcUAVY0-0-mSgNVFRU)",
+          backgroundImage: `url(${IMAGE_BASE}/${album.cover})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         {/* Reflection overlay - diagonal bar that follows mouse */}
@@ -103,17 +105,17 @@ export const Albums = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
         {[
-          { path: "japan", name: "Japan" },
-          { path: "new-zealand", name: "New Zealand" },
-          { path: "austria", name: "Austria" },
-          { path: "argentina", name: "Argentina" },
-          { path: "france", name: "France" },
-          { path: "espana", name: "España" },
-          { path: "andorra", name: "Andorra" },
-          { path: "indonesia", name: "Indonesia" },
-          { path: "australia", name: "Australia" },
-          { path: "random", name: "Random" },
-          { path: "about", name: "About" },
+          { path: "japan", name: "Japan", cover: "japan.JPG" },
+          { path: "new-zealand", name: "New Zealand", cover: "new-zealand.JPG" },
+          { path: "austria", name: "Austria", cover: "austria.jpg" },
+          { path: "argentina", name: "Argentina", cover: "argentina.BMP" },
+          { path: "france", name: "France", cover: "france.jpg" },
+          { path: "espana", name: "España", cover: "españa.JPG" },
+          { path: "andorra", name: "Andorra", cover: "andorra.JPG" },
+          { path: "indonesia", name: "Indonesia", cover: "indonesia.JPG" },
+          // { path: "australia", name: "Australia", cover: "random.JPG" },
+          { path: "random", name: "Random", cover: "random.JPG" },
+          { path: "about", name: "About", cover: "about.jpg" },
         ].map((album) => (
           <AlbumCard key={album.path} album={album} />
         ))}

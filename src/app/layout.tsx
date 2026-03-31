@@ -1,10 +1,12 @@
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
-import { Caveat } from "next/font/google";
+import { Caveat, Plus_Jakarta_Sans } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import { Menu } from "./_components/Menu";
+import { LangProvider } from "./_contexts/LangContext";
+import { LangToggle } from "./_components/LangToggle";
 
 export const metadata: Metadata = {
   title: "Analogs — A Digital Scrapbook of Analog Pictures",
@@ -31,6 +33,11 @@ const caveat = Caveat({
   variable: "--font-caveat",
 });
 
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta-sans",
+});
+
 
 export default function RootLayout({
   children,
@@ -38,7 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${caveat.variable} font-caveat flex min-h-screen min-w-screen flex-col items-center justify-center bg-black text-white`}
+      className={`${caveat.variable} ${plusJakartaSans.variable} font-plus-jakarta-sans flex min-h-screen min-w-screen flex-col items-center justify-center bg-black text-white`}
       style={{
         scrollbarWidth: "none",
         msOverflowStyle: "none",
@@ -52,8 +59,11 @@ export default function RootLayout({
         }}
       >
         <TRPCReactProvider>
-          <Menu />
-          {children}
+          <LangProvider>
+            <Menu />
+            <LangToggle />
+            {children}
+          </LangProvider>
         </TRPCReactProvider>
       </body>
     </html>

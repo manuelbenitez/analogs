@@ -34,7 +34,7 @@ export const Menu = () => {
             className="cursor-pointer rounded border border-white/10 bg-black/50 px-4 py-2 transition-all duration-300 hover:bg-black/70"
             onClick={() => router.back()}
           >
-            <h4 className="flex items-center gap-1 text-xl font-bold"><ChevronLeft size={22} /> Back</h4>
+            <h4 className="flex items-center gap-1 text-xl"><ChevronLeft size={22} /> Back</h4>
           </motion.div>
         )}
         <motion.div
@@ -53,7 +53,7 @@ export const Menu = () => {
               transition={{ duration: 0.5, ease: "easeInOut" }}
               layout
             >
-              <span className="flex items-center gap-1 text-xl font-bold">{isOpen ? <><X size={22} /> Close</> : <><Images size={22} /> Albums</>}</span>
+              <span className="flex items-center gap-1 text-xl">{isOpen ? <><X size={22} /> Close</> : <><Images size={22} /> Albums</>}</span>
             </motion.h4>
           </AnimatePresence>
         </motion.div>

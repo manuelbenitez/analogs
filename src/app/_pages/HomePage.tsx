@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useLang } from "../_contexts/LangContext";
 
 export const HomePage = ({ images }: { images: string[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { lang } = useLang();
 
   useEffect(() => {
     if (images.length <= 1) return;
@@ -25,9 +27,11 @@ export const HomePage = ({ images }: { images: string[] }) => {
           style={{ opacity: i === currentIndex ? 1 : 0 }}
         />
       ))}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/30" />
       <h1 className="relative z-10 text-center text-5xl leading-normal tracking-tight [text-shadow:0_2px_10px_rgba(0,0,0,0.5)] sm:text-[5rem]">
-        Digital Scrapbook of Analog Pictures
+        {lang === "es"
+          ? "Colección Digital de Fotos Analógicas"
+          : "Digital Scrapbook of Analog Pictures"}
       </h1>
     </div>
   );

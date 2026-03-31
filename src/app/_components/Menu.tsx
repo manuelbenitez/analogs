@@ -32,9 +32,9 @@ export const Menu = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="cursor-pointer rounded border border-white/10 bg-black/50 px-4 py-2 transition-all duration-300 hover:bg-black/70"
-            onClick={() => router.back()}
+            onClick={() => { setIsOpen(false); router.push("/"); }}
           >
-            <h4 className="flex items-center gap-1 text-xl"><ChevronLeft size={22} /> Back</h4>
+            <h4 className="flex items-center gap-1 text-xl"><ChevronLeft size={22} /> Home</h4>
           </motion.div>
         )}
         <motion.div

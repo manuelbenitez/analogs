@@ -2,10 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import { useLang } from "../_contexts/LangContext";
+import { usePrefetchAlbums } from "./usePrefetchAlbums";
 
 export const HomePage = ({ images }: { images: string[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { lang } = useLang();
+  usePrefetchAlbums();
 
   useEffect(() => {
     if (images.length <= 1) return;

@@ -1,5 +1,6 @@
 import "~/styles/globals.css";
 
+import Script from "next/script";
 import { type Metadata } from "next";
 import { Caveat, Plus_Jakarta_Sans } from "next/font/google";
 
@@ -57,6 +58,18 @@ export default function RootLayout({
           msOverflowStyle: "none",
         }}
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-HZEDNVLRN6"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HZEDNVLRN6');
+          `}
+        </Script>
         <LangProvider>
           <Menu />
           <LangToggle />
